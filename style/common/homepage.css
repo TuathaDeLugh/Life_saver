@@ -1,0 +1,129 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Damion|Muli:400,600');
+/*Light*/
+
+@media (prefers-color-scheme: light) {
+    .block {
+        box-shadow:0px 0px 2px rgba(0, 0, 0, 0.25);
+    }
+
+
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+       
+        background: #3fbafe;
+    }
+
+
+    .card__title {
+        color: #ffffff;
+    }
+
+    .card__apply {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+}
+/*Dark*/
+@media (prefers-color-scheme: dark) {
+    .block {
+        box-shadow:0px 0px 2px rgba(255, 255, 255, 0.25);
+    }
+
+
+    .card {
+        background: #6a5acd;
+        box-shadow: rgba(200, 200, 200, 0.16) 0px 10px 36px 0px, rgba(200, 200, 200, 0.06) 0px 0px 0px 1px;
+    }
+
+
+    .card__title {
+        color: #ededed;
+    }
+
+    .card__apply {
+        color: rgba(237, 237, 237, 0.9);
+    }
+
+}
+
+/*Design*/
+.block {
+    align-content: center;
+    
+    margin:10px 35px 10px 35px;
+    padding: 10px;
+    width: auto;
+    display: grid;
+    border-radius: 10px;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    justify-content:space-around;
+    text-align: left;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    min-height: 150px;
+    display: grid;
+    width:450px;
+    grid-template-rows: 10px 07px 1fr 50px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    flex-grow: 1;
+    overflow:hidden;
+}
+
+    .card:hover {
+        transform: scale(1.02);
+        z-index: 1;
+    }
+
+.card__title {
+
+    grid-row: 1/2;
+    font-weight: 300;
+}
+
+
+
+.card__apply {
+    grid-row: 4/5;
+    font-weight: 300;
+    transition: all 0.5s;
+}
+@media (max-width: 680px) {
+     .card{
+        width: auto;
+        height: auto;
+    }
+    .card__apply {
+        font-size: 15px;
+    }
+     }
+@media (max-width: 1199px) {
+    .card{
+        width:40%;
+    }
+}
+
+
+    .image {
+        grid-row: 2/4;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        height: 100px;
+    }
+
+    .cimage {
+        margin: auto;
+        height: 70px;
+        width: 70px;
+        filter: invert(1);
+        opacity: 0.6;
+    }

@@ -1,0 +1,114 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Damion|Muli:400,600');
+/*light*/
+@media (prefers-color-scheme: light) {
+    .block {
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    }
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+        .card:hover {
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+        }
+        .card a{
+            color:white;
+        }
+        .card__title {
+            color: #ffffff;
+        }
+    .card__apply {
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
+/*dark*/
+@media (prefers-color-scheme: dark) {
+    .block {
+        box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.25);
+    }
+
+    .card {
+        box-shadow: rgba(200, 200, 200, 0.16) 0px 10px 36px 0px, rgba(200, 200, 200, 0.06) 0px 0px 0px 1px;
+    }
+
+        .card:hover {
+            box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.4);
+        }
+
+    .card__title {
+        color: #181818;
+    }
+
+    .card__apply>a {
+        color: rgba(0,0,0, 0.6);
+    }
+}
+/*design*/
+.block
+{   left:inherit;
+   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+  width: auto;
+  display: grid;
+  border-radius: 10px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    overflow-wrap: anywhere;
+    min-height: 200px;
+    display: grid;
+    grid-template-rows: 0px3px 1fr6px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    border: solid 1px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight:300;
+}  
+
+.card__apply {
+  grid-row: 4/5;
+  font-weight:300;
+  transition: all 0.5s;
+}
+
+.card-1, .card-4, .card-7, .card-10 {
+    background: #C0C0C0;
+    
+    /*background: radial-gradient( #ee9ca7 , #ffdde1);*/
+}
+.card-2, .card-5, .card-8, .card-11 {
+    /* background: radial-gradient( #02aab0, #00cdac);
+    */ background: #d4d4d6;
+    
+}
+
+.card-3, .card-6, .card-9, .card-12 {
+    /*background: radial-gradient( #36d1dc, #5b86e5);
+    */ background: #A9A9A9;
+    
+}
+@media (max-width: 576px) {
+    .card {
+
+    width:250px;
+    
+
+    }
+}

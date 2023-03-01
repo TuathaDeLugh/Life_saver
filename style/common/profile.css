@@ -1,0 +1,135 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Damion|Muli:400,600');
+/*light*/
+@media (prefers-color-scheme: light) {
+    .block {
+
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    td {
+
+        border-bottom: 1px solid #ddd;
+    }
+    table a{
+        color:black;
+    }
+}
+/*dark*/
+@media (prefers-color-scheme: dark) {
+    .block {
+        box-shadow: 0px 0px 2px rgba(255, 255, 255, 0.25);
+    }
+    table {
+        color: white;
+    }
+    td {
+        border-bottom: 1px solid rgba(237, 237, 237, 0.25);
+    }
+    input[type="text"], input[type="number"], input[type="password"] ,.design{
+        background-color: #181818;
+        color: white;
+    }
+    table a {
+        color: white;
+    }
+    textarea {
+        background-color: #181818;
+        color: white;
+    }
+
+}
+/*Design*/
+
+.block
+{ left:inherit;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+  width: 650px;
+  border-radius: 10px;
+
+}
+table
+{
+    text-align:center;
+}
+td 
+{   font-size:20px;
+    width:200px;
+     padding: 15px;
+    text-align: left;
+}
+table span {
+    font-size: 15px;
+    color:red;
+}
+input[type="text"], input[type="number"], input[type="password"] {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    font: 15px/24px 'Muli', sans-serif;
+    width: 300px;
+    letter-spacing: 1px;
+}
+    input[type="text"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled {
+        cursor: no-drop;
+    }
+textarea {
+    border: .1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    font: 15px/24px 'Muli', sans-serif;
+    height: 150px;
+    width: 315px;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    resize: none;
+}
+    textarea:disabled {
+        cursor: no-drop;
+    }
+
+    input[type="submit"] {
+        border: none;
+        outline: none;
+        
+        background: #ff4545;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        min-width: 100px;
+        max-width: 200px;
+        color:white;
+    }
+input[type="submit"]:active 
+{
+	opacity: 0.8;
+}
+        input[type="submit"]:hover {
+            background: #D10000;
+        }
+
+@media (max-width: 680px) {
+
+    .block{
+        margin:10px;
+        width:auto;
+        
+    }
+    td{
+       width:15px;
+       overflow:hidden;
+       padding: 15px 0 15px 0;
+    }
+     input[type="text"], input[type="number"], input[type="password"] {
+        width: 45vw;
+    }
+    textarea {
+        width: 47vw;
+    }
+    
+
+}
+#save{
+    display: none;
+}

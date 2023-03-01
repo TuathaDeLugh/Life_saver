@@ -1,0 +1,65 @@
+﻿html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;
+}
+@media (prefers-color-scheme: light) {
+
+    ::-webkit-scrollbar-thumb {
+        background: #c7c6c1;
+    }
+    ::-webkit-scrollbar-track{
+        background:white;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #999da0;
+    }
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+/*main*/
+
+.logo{
+    color:black;
+}
+.login {
+    background: rgb( 243, 82, 90 ,0.4);
+}
+.login:hover{
+    background:white;
+}
+@media (prefers-color-scheme: dark) {
+    ::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: #181818;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #777b7e;
+    }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #48494b;
+        }
+
+    :root {
+        --dark: black;
+    }
+
+    html, img, iframe, .swal-overlay--show-modal {
+        filter: invert(1) hue-rotate(180deg);
+    }
+}
