@@ -65,7 +65,7 @@ if (isset($_GET['appcamp'])) {
     $data = [
         'userid' => $username,
         'name' => $name,
-        'campaignid' => $campid,
+        'id' => $campid,
         'address' => $address,
         'pin' => $pin,
         'map' => $map,

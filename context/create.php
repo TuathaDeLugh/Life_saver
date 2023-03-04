@@ -22,7 +22,7 @@ if (isset($_POST['crcamp']))
     $date = $_POST['date1']." To ".$_POST['date2'];
     $time = $_POST['time1']." To ".$_POST['time2'];
     $data = [
-        'campid'=>"$name"." by "."$username",
+        'id'=>"$name"." by "."$username",
         'username'=>$username,
         'name' => $name,
         'address' => $address,
