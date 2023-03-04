@@ -33,7 +33,7 @@
                     href="../admin/home.php" class="nav-item nav-link"><u class="ahome">Home</u></a>
                 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle meu" data-bs-toggle="dropdown">Users</a>
+                    <a href="#" class="nav-link dropdown-toggle meu bdo org rmu ca ac" data-bs-toggle="dropdown">Users</a>
                     <div class="dropdown-menu m-0">
                         <a  href="../admin/bloodapprove.php" class="dropdown-item"><u class="bdo">  Blood Donation</u></a>
                         <a  href="../admin/organ.php" class="dropdown-item" ><u class="org"> Organ request</u></a>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle bbm" data-bs-toggle="dropdown">Blood Bank</a>
+                    <a href="#" class="nav-link dropdown-toggle bbm bb bd" data-bs-toggle="dropdown">Blood Bank</a>
                     <div class="dropdown-menu m-0">
                         <a  href="../admin/bbhome.php" class="dropdown-item"><u class="bb"> Bloodbank </u></a>
                         <a  href="../admin/blooddata.php" class="dropdown-item"><u class="bd"> Blood Data</u></a>
