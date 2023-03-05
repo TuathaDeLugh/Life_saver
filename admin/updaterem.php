@@ -103,7 +103,7 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="../context/update.php?appcamp=<?php echo$key?>&name=<?php echo$row['name']?>&name=<?php echo$row['address']?>&address=<?php echo$row['address']?>&pin=<?php echo$row['pin']?>&image=<?php echo$row['image']?>&map=<?php echo$row['map']?>&mono=<?php echo$row['mono']?>&tag=<?php echo$row['tag']?>&date=<?php echo$row['date']?>&time=<?php echo$row['time']?>&campid=<?php echo$row['campid']?>" class="btn btn-primary">Approve</a></td>
+                    <td id="<?php echo $i ?>"><a href="../context/update.php?appcamp=<?php echo$key?>&name=<?php echo$row['name']?>&address=<?php echo$row['address']?>&pin=<?php echo$row['pin']?>&image=<?php echo$row['image']?>&map=<?php echo$row['map']?>&mono=<?php echo$row['mono']?>&tag=<?php echo$row['tag']?>&date=<?php echo$row['date']?>&time=<?php echo$row['time']?>&campid=<?php echo$row['id']?>" class="btn btn-primary">Approve</a></td>
                 </tr>
                 <?php
                  $i++;

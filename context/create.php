@@ -21,8 +21,9 @@ if (isset($_POST['crcamp']))
     $image = $_POST['image'];
     $date = $_POST['date1']." To ".$_POST['date2'];
     $time = $_POST['time1']." To ".$_POST['time2'];
+    $id="$name"." by "."$username";
     $data = [
-        'id'=>"$name"." by "."$username",
+        'id'=> $id,
         'username'=>$username,
         'name' => $name,
         'address' => $address,
