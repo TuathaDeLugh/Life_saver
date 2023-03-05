@@ -3,8 +3,6 @@
 <head>    
 <link rel="icon" href="../files/logo.png" type="image/x-icon"/>
 <link href="../style/Bloodbank/bbblooddata.css" rel="stylesheet" type="text/css" />
-    <link href="../style/common/model.css" rel="stylesheet" type="text/css" />
-    <script defer src="../js/model.js"></script>
     <link href="../js/toast.css" rel="stylesheet" />
     <script src="../js/toast.js"></script> 
     <script>
@@ -12,6 +10,7 @@
         </script>
     
 </head>
+
 <body>
     <?php include('header.php');?>
     <main id="main">
@@ -26,12 +25,12 @@
 <tr>
 <td><div class="inputBox">
             <span>O+</span>
-				<input type="number" name="opve"  ></div>
+				<input type="number" id="opve" name="opve"  ></div>
     </td>
     <td>
     <div class="inputBox">
             <span>O-</span>
-				<input type="number" name="onve"  ></td></div>            
+				<input type="number" id="onve" name="onve"  ></td></div>            
  </tr>
  <tr>
 <th colspan="2">A</th>
@@ -39,12 +38,12 @@
 <tr>
 <td><div class="inputBox">
             <span>A+</span>
-				<input type="number" name="apve"  ></div>
+				<input type="number" id="apve" name="apve"  ></div>
     </td>
     <td>
     <div class="inputBox">
             <span>A-</span>
-				<input type="number" name="anve"  ></asp:TextBox ></td>
+				<input type="number" id="anve" name="anve"  ></asp:TextBox ></td>
                 </div>
  </tr>
  <tr>
@@ -53,12 +52,12 @@
 <tr>
 <td><div class="inputBox">
             <span>B+</span>
-				<input type="number" name="bpve"  ></div>
+				<input type="number" id="bpve" name="bpve"  ></div>
     </td>
     <td>
         <div class="inputBox">
             <span>B-</span>
-				<input type="number" name="bnve"  ></td>
+				<input type="number" id="bnve" name="bnve"  ></td>
                 </div>
  </tr>
  <tr>
@@ -67,16 +66,16 @@
 <tr>
 <td><div class="inputBox">
             <span>AB+</span>
-				<input type="number" name="abpve"  ></div>
+				<input type="number" id="abpve" name="abpve"  ></div>
     </td>
     <td>
     <div class="inputBox">
             <span>AB-</span>
-				<input type="number" name="abnve"  ></td>
+				<input type="number" id="abnve" name="abnve"  ></td>
                 </div>
  </tr>
      <tr>
-    <td colspan="2"><input type="submit" name="save" Class="btn" value="Save" /></td>
+    <td colspan="2"><input type="submit" id="" name="save" Class="btn" value="Save" /></td>
 </tr>
  </table>
 </form>
@@ -85,5 +84,22 @@
     </center>
     </main>
     <?php include('footer.php');?>
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase.js"></script>
+    <script src="../context/firebaseconfig.js"></script>
+    <script>
+      firebase
+      .database()
+      .ref("blooddata/" + '<?php echo$_SESSION['user'];?>' )
+      .on("value", function (snap) {
+        document.getElementById("opve").value = snap.val().opve;
+        document.getElementById("onve").value = snap.val().onve;
+        document.getElementById("apve").value = snap.val().apve;
+        document.getElementById("anve").value = snap.val().anve;
+        document.getElementById("bpve").value = snap.val().bpve;
+        document.getElementById("bnve").value = snap.val().bnve;
+        document.getElementById("abpve").value = snap.val().abpve;
+        document.getElementById("abnve").value = snap.val().abnve;
+        });
+</script>
 </body>
 </html>
