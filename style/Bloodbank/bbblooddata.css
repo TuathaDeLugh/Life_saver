@@ -83,7 +83,7 @@ input[type="submit"] {
 .inputBox {
     position: relative;
     width: 200px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 input[type="submit"]:hover {
     background: #D10000;
