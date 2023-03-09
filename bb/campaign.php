@@ -32,12 +32,33 @@
 </head>
 <body>
     <?php include('header.php');
+
     	if (isset($_COOKIE['update'])) {
             ?>
             <script>NolertNotify.trigger({type: 'info',iconType: 'success',message: '<?php echo$_COOKIE['update']?>'});</script>
             <?php
         }?>
-    <main id="main">
+                    <?php
+            if (isset($_GET['map'])) {
+                $map = $_GET['map'];
+                if (str_contains($map, "https://goo")) {
+                    ?>
+                    <script>window.open('<?php echo $map; ?>', '_blank');</script>
+                    <?php
+
+                } elseif (str_contains($map, ",")) {
+                    ?>
+                    <script>window.open('https://www.google.com/maps/place/<?php echo $map; ?>', '_blank');</script>
+
+                    <?php
+                } else {
+                    ?>
+                    <script>NolertNotify.trigger({ type: 'danger', iconType: 'info', message: 'Given Maplink Is Invalid' })</script>
+                    <?php
+                }
+            }
+            ?>
+        <main id="main">
         <div class="block">
         <?php
         include('../context/db.php');
@@ -68,37 +89,11 @@ $i = 1;
             $refrance = $database->getReference("campaign/approve")->getValue();
             foreach ($refrance as $key => $row) { ?>
                 <tr>
-                    <?php
-                    if (isset($_GET['map']))
-                    {   
-                        $map= $_GET['map'];
-                        if(str_contains($map,"https://goo"))
-                            {   
-                                ?>
-                                 <script>window.open('<?php echo$map;?>', '_blank');</script>
-                               <?php
-                               
-                            }
-                        elseif(str_contains($map,","))
-                        {
-                            ?>
-                                 <script>window.open('https://www.google.com/maps/place/<?php echo$map;?>', '_blank');</script>
-                                
-                               <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <script>NolertNotify.trigger({type: 'danger',iconType: 'info',message: 'Given Maplink Is Invalid'})</script>
-                        <?php
-                        }
-                    }
-                    ?>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="updaterem.php?map=<?php echo $row['map']; ?>"><button class="btn btn-primary">map</button></a></td>
+                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><button class="btn btn-primary">map</button></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
