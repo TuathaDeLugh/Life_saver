@@ -24,7 +24,7 @@ if (isset($_POST['crcamp']))
     $id="$name"." by "."$username";
     $data = [
         'id'=> $id,
-        'username'=>$username,
+        'userid'=>$username,
         'name' => $name,
         'address' => $address,
         'pin' => $pin,

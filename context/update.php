@@ -10,7 +10,7 @@ if ($_SESSION['user'] == "admin") {
 include('db.php');
 if (isset($_POST['upcamp'])) {
     $key = $_POST['key'];
-    $username = $_SESSION['user'];
+    $username = $_POST['uername'];
     $name = $_POST['name'];
     $address = $_POST['address'];
     $pin = $_POST['pin'];
@@ -61,7 +61,7 @@ if (isset($_GET['appcamp'])) {
         $image = $_GET['image'];
         $date = $_GET['date'];
         $time = $_GET['time'];
-        $username = $_SESSION['user'];
+        $username = $_GET['userid'];
     $data = [
         'userid' => $username,
         'name' => $name,

@@ -130,6 +130,8 @@ if ($getdata > 0) {
                                 <div class="inputBox">
                                     <span>Time</span>
                                     <input type="text" name="time" class="design" required value="<?php echo $row['time'] ?>">
+                                    <input type="hidden" name="username" class="design" value="<?php echo $row['username'] ?>">
+
                                 </div>
                                 <div class="inputBox">
                                     <span>
