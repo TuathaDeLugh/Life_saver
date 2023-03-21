@@ -57,54 +57,71 @@ $i = 1;
                 <td>map</td>
                 <td>mono</td>
                 <td>tag</td>
+                <td>image</td>
                 <td>date</td>
                 <td>time</td>
                 <td>Approve</td>
             </tr>
         </thead>
+            <?php
+            if (isset($_GET['map']))
+            {   
+                $map= $_GET['map'];
+                if(str_contains($map,"https://goo"))
+                    {   
+                        ?>
+                         <script>window.open('<?php echo$map;?>', '_blank');</script>
+                       <?php
+                       
+                    }
+                elseif(str_contains($map,","))
+                {
+                    ?>
+                         <script>window.open('https://www.google.com/maps/place/<?php echo$map;?>', '_blank');</script>
+                        
+                       <?php
+                }
+                else
+                {
+                    ?>
+                    <script>NolertNotify.trigger({type: 'danger',iconType: 'info',message: 'Given Maplink Is Invalid'})</script>
+                <?php
+                }
+            }
+            ?>
         <tbody>
 
             <?php
             $refrance = $database->getReference("campaign/notapprove")->getValue();
             foreach ($refrance as $key => $row) { ?>
                 <tr>
-                    <?php
-                    if (isset($_GET['map']))
-                    {   
-                        $map= $_GET['map'];
-                        if(str_contains($map,"https://goo"))
-                            {   
-                                ?>
-                                 <script>window.open('<?php echo$map;?>', '_blank');</script>
-                               <?php
-                               
-                            }
-                        elseif(str_contains($map,","))
-                        {
-                            ?>
-                                 <script>window.open('https://www.google.com/maps/place/<?php echo$map;?>', '_blank');</script>
-                                
-                               <?php
-                        }
-                        else
-                        {
-                            ?>
-                            <script>NolertNotify.trigger({type: 'danger',iconType: 'info',message: 'Given Maplink Is Invalid'})</script>
-                        <?php
-                        }
-                    }
-                    ?>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="updaterem.php?map=<?php echo $row['map']; ?>"><button class="btn btn-primary">map</button></a></td>
+                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
+                    <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"
+                                class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
                     <td id="<?php echo $i ?>"><a href="../context/update.php?appcamp=<?php echo$key?>&name=<?php echo$row['name']?>&address=<?php echo$row['address']?>&pin=<?php echo$row['pin']?>&image=<?php echo$row['image']?>&map=<?php echo$row['map']?>&mono=<?php echo$row['mono']?>&tag=<?php echo$row['tag']?>&date=<?php echo$row['date']?>&time=<?php echo$row['time']?>&campid=<?php echo$row['id']?>&useridgit push=<?php echo$row['userid']?>" class="btn btn-primary">Approve</a></td>
                 </tr>
+                <div class="modal" id="image<?php echo $i ?>">
+                    <div class="modal-header">
+                        <div class="title">
+                            <h3>Image<h3>
+                        </div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <img src="<?php echo $row['image'] ?>" alt="Image" width="300px">
+                            <center>
+                    </div>
+                </div>
+                <div id="overlay"></div>
                 <?php
                  $i++;
             }

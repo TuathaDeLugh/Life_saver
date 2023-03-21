@@ -43,7 +43,7 @@
     <td>
     <div class="inputBox">
             <span>A-</span>
-				<input type="number" id="anve" name="anve"  ></asp:TextBox ></td>
+				<input type="number" id="anve" name="anve"  ></td>
                 </div>
  </tr>
  <tr>

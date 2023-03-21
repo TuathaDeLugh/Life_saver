@@ -21,7 +21,7 @@
     session_start();
     ?>
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="https://umangsailor.bsite.net" class="navbar-brand p-0">
+        <a href="" class="navbar-brand p-0">
             <h1 class="m-0 text-uppercase logo">Life Saver</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -35,7 +35,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle meu bdo org rmu ca ac" data-bs-toggle="dropdown">Users</a>
                     <div class="dropdown-menu m-0">
-                        <a  href="../admin/bloodapprove.php" class="dropdown-item"><u class="bdo">  Blood Donation</u></a>
+                        <!-- <a  href="../admin/bloodapprove.php" class="dropdown-item"><u class="bdo">  Blood Donation</u></a> -->
                         <a  href="../admin/organ.php" class="dropdown-item" ><u class="org"> Organ request</u></a>
                         <a  href="../admin/removeuser.php" class="dropdown-item" ><u class="rmu"> Remove users</u></a>
                         <div class="dropdown-divider"></div> 

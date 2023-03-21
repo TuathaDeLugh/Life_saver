@@ -54,11 +54,12 @@ if ($getdata > 0) {
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><button
-                                class="btn btn-primary">map</button></a></td>
+                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png"
+                                class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
-                    <td><button data-modal-target="#image<?php echo $i ?>" class="btn btn-primary">Image</button></td>
+                    <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"
+                                class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
                     <td><button data-modal-target="#upcamp<?php echo $i; ?>" class="btn btn-outline-primary">update</button>
@@ -130,7 +131,7 @@ if ($getdata > 0) {
                                 <div class="inputBox">
                                     <span>Time</span>
                                     <input type="text" name="time" class="design" required value="<?php echo $row['time'] ?>">
-                                    <input type="hidden" name="username" class="design" value="<?php echo $row['username'] ?>">
+                                    <input type="hidden" name="username" class="design" value="<?php echo $row['userid'] ?>">
 
                                 </div>
                                 <div class="inputBox">
@@ -158,7 +159,7 @@ if ($getdata > 0) {
                             <center>
                     </div>
                     <div id="overlay"></div>
-
+                </div>
                     <?php
                     $i++;
             }
