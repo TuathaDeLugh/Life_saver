@@ -15,7 +15,7 @@
         <div class="block">
         <div class="heading"><h2><i><asp:Label   Text="Label"></asp:Label> Profile</i></h2></div>
     <table>
-    <tr><td><asp:LinkButton  >Change Password</asp:LinkButton></td></tr>
+    <tr><td><a href="change.php" >Change Password</a></td></tr>
 <tr>
 <td>Username</td>
 <td>

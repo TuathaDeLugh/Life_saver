@@ -32,7 +32,7 @@ if (isset($_POST['upcamp'])) {
         'date' => $date,
         'time' => $time,
     ];
-    $postref = $database->getReference("campaign/$approve/$key")->set($data);
+    $postref = $database->getReference("campaign/$approve/$key")->update($data);
     setcookie("update", "Your $name campaign Updated", time() + 5, "/");
     header("location:../$user/campaign.php");
 }
