@@ -50,12 +50,12 @@ function login($userid,$password)
                     header("location:../$loc");
             }
              else {
-                setcookie("alert", "Incorrect password", time() + 5, "/");
+                setcookie("alert", "Invalid userid or password", time() + 5, "/");
                 header("location:../login.php");
             }
             
         } else {
-            setcookie("alert", "Invalid User ID", time() + 5, "/");
+            setcookie("alert", "Invalid userid or password", time() + 5, "/");
             header("location:../login.php");
         }
 
