@@ -99,7 +99,7 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
+                    <td id="<?php echo $i ?>"><a href="updaterem.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
                     <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"

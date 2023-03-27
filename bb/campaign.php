@@ -79,6 +79,7 @@ $i = 1;
                 <td>map</td>
                 <td>mono</td>
                 <td>tag</td>
+                <td>Image</td>
                 <td>date</td>
                 <td>time</td>
             </tr>
@@ -93,12 +94,28 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><button class="btn btn-primary">map</button></a></td>
+                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
+                    <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"
+                                class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
                 </tr>
+                <div class="modal" id="image<?php echo $i ?>">
+                    <div class="modal-header">
+                        <div class="title">
+                            <h3>Image<h3>
+                        </div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <img src="<?php echo $row['image'] ?>" alt="Image" width="300px">
+                            <center>
+                    </div>
+                </div>
+                <div id="overlay"></div>
                 <?php
                  $i++;
             }
