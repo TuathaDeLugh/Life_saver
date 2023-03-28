@@ -103,10 +103,25 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
                     <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"
-                                class="icon"></button></td>
+                    class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="../context/update.php?appcamp=<?php echo$key?>&name=<?php echo$row['name']?>&address=<?php echo$row['address']?>&pin=<?php echo$row['pin']?>&image=<?php echo$row['image']?>&map=<?php echo$row['map']?>&mono=<?php echo$row['mono']?>&tag=<?php echo$row['tag']?>&date=<?php echo$row['date']?>&time=<?php echo$row['time']?>&campid=<?php echo$row['id']?>&useridgit push=<?php echo$row['userid']?>" class="btn btn-primary">Approve</a></td>
+                    <td id="<?php echo $i ?>">
+                    <form action="../context/update.php?" method="post">
+                    <input type="hidden" name="" value="<?php echo $row['name']; ?>">
+                    <input type="hidden" name="" value="<?php echo $row['address']; ?>">      
+                    <input type="hidden" name="pin" value="<?php echo $row['pin']; ?>">  
+                    <input type="hidden" name="map" value="<?php echo $row['map']; ?>">  
+                    <input type="hidden" name="mono" value="<?php echo $row['mono']; ?>">  
+                    <input type="hidden" name="tag" value="<?php echo $row['tag']; ?>">  
+                    <input type="hidden" name="image" value="<?php echo $row['image']; ?>">  
+                    <input type="hidden" name="date" value="<?php echo $row['date']; ?>">  
+                    <input type="hidden" name="time" value="<?php echo $row['time']; ?>"> 
+                    <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>">
+                    <input type="hidden" name="appcamp" value="<?php echo$key?>">
+                    <input type="submit" name="approve" value="approve" class="btn btn-primary">  
+                    </form>
+                    </td>
                 </tr>
                 <div class="modal" id="image<?php echo $i ?>">
                     <div class="modal-header">

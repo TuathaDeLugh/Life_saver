@@ -49,19 +49,19 @@ if (isset($_GET['delbb'])) {
     setcookie("delete", "$bid Blood Bank Deleted", time() + 5, "/");
     header("location:../admin/bbhome.php");
 }
-if (isset($_GET['appcamp'])) {
-        $caid = $_GET['appcamp'];
-        $campid = $_GET['campid'];
-        $name = $_GET['name'];
-        $address = $_GET['address'];
-        $pin = $_GET['pin'];
-        $map = $_GET['map'];
-        $mono = $_GET['mono'];
-        $tag = $_GET['tag'];
-        $image = $_GET['image'];
-        $date = $_GET['date'];
-        $time = $_GET['time'];
-        $username = $_GET['userid'];
+if (isset($_POST['appcamp'])) {
+        $caid = $_POST['appcamp'];
+        $campid = $_POST['campid'];
+        $name = $_POST['name'];
+        $address = $_POST['address'];
+        $pin = $_POST['pin'];
+        $map = $_POST['map'];
+        $mono = $_POST['mono'];
+        $tag = $_POST['tag'];
+        $image = $_POST['image'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $username = $_POST['userid'];
     $data = [
         'userid' => $username,
         'name' => $name,
