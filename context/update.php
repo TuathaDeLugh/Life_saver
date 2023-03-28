@@ -65,7 +65,7 @@ if (isset($_POST['appcamp'])) {
     $data = [
         'userid' => $username,
         'name' => $name,
-        'id' => $campid,
+        'id' => $caid,
         'address' => $address,
         'pin' => $pin,
         'map' => $map,

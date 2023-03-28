@@ -108,8 +108,8 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
                     <td id="<?php echo $i ?>">
                     <form action="../context/update.php?" method="post">
-                    <input type="hidden" name="" value="<?php echo $row['name']; ?>">
-                    <input type="hidden" name="" value="<?php echo $row['address']; ?>">      
+                    <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
+                    <input type="hidden" name="address" value="<?php echo $row['address']; ?>">      
                     <input type="hidden" name="pin" value="<?php echo $row['pin']; ?>">  
                     <input type="hidden" name="map" value="<?php echo $row['map']; ?>">  
                     <input type="hidden" name="mono" value="<?php echo $row['mono']; ?>">  
