@@ -63,7 +63,7 @@ function login($userid,$password)
 }
 if (isset($_POST['login'])) {
     $user = $_POST['userid'];
-    $pass = md5($_POST['password']);
+    $pass = sha1($_POST['password']);
     login($user,$pass);
 }
 if (isset($_GET['autofill'])) {

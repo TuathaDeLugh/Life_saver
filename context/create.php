@@ -42,7 +42,7 @@ if (isset($_POST['crcamp']))
 
 if (isset($_POST['addbb']))
 {   
-    $pass=md5($_POST['password']);
+    $pass=sha1($_POST['password']);
     $username = $_POST['username'];
     $name = $_POST['name'];
     $address = $_POST['address'];

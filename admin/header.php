@@ -24,7 +24,7 @@
     <?php
     session_start();
     if (!(isset($_SESSION['user']))) {
-        setcookie("session", "Your old session is not found please login again", time() + 5, "/");
+        setcookie("session", "Your previous session is not found please login again", time() + 5, "/");
         header("location:../login.php");
     }
     ?>

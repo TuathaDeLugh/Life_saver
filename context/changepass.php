@@ -11,9 +11,9 @@ else{
     $page="bb/change.php";
 }
 if (isset($_POST['updatepass'])){
-    $oldpass=md5($_POST['oldpass']);
-    $newpass=md5($_POST['newpass']);
-    $conpass=md5($_POST['conpass']);
+    $oldpass=sha1($_POST['oldpass']);
+    $newpass=sha1($_POST['newpass']);
+    $conpass=sha1($_POST['conpass']);
 
     $checkdata = $database->getReference("weblogin/$admin/$userid/password")->getValue();
     if ($checkdata > 0) {

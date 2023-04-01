@@ -27,7 +27,7 @@
 	}
 	if (isset($_COOKIE['session'])) {
 		?>
-		<script>swal('Permission Denied','<?php echo $_COOKIE['session']; ?>','error')</script>
+		<script>swal('Access Denied','<?php echo $_COOKIE['session']; ?>','error')</script>
 		<?php
 	}
 	if (isset($_COOKIE['noc'])) {
