@@ -22,9 +22,13 @@
 <body>
     <?php
     session_start();
+    if (!(isset($_SESSION['user']))) {
+        setcookie("session", "Your old session is not found please login again", time() + 5, "/");
+        header("location:../login.php");
+    }
     ?>
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm px-5 py-3 py-lg-0">
-        <a href="https://umangsailor.bsite.net" class="navbar-brand p-0">
+        <a href="../" class="navbar-brand p-0">
             <h1 class="m-0 text-uppercase logo">Life Saver</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

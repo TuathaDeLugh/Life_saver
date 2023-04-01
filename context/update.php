@@ -49,6 +49,13 @@ if (isset($_GET['delbb'])) {
     setcookie("delete", "$bid Blood Bank Deleted", time() + 5, "/");
     header("location:../admin/bbhome.php");
 }
+if (isset($_GET['deluser'])) {
+    $id = $_GET['deluser'];
+    $username = $_GET['name'];
+    $database->getReference("Users/$id")->remove();
+    setcookie("delete", "Selected User $username Deleted", time() + 5, "/");
+    header("location:../admin/removeuser.php");
+}
 if (isset($_POST['appcamp'])) {
         $caid = $_POST['appcamp'];
         $campid = $_POST['campid'];

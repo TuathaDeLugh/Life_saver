@@ -150,7 +150,7 @@ else {
     ?>
      <tr>
          <td colspan="7">
-             <h3>No Blood Bank avaliable</h3>
+             <h3>No Campaign avaliable for approve</h3>
          <td>
      <tr>
   

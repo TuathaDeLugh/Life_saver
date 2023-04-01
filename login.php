@@ -25,6 +25,11 @@
 		<script>swal('<?php echo $_COOKIE['alert']; ?>', '', 'error')</script>
 		<?php
 	}
+	if (isset($_COOKIE['session'])) {
+		?>
+		<script>swal('Permission Denied','<?php echo $_COOKIE['session']; ?>','error')</script>
+		<?php
+	}
 	if (isset($_COOKIE['noc'])) {
 		?>
 		<script>NolertNotify.trigger({type: 'danger',iconType: 'warning',message: 'Autofill Data Not Found'});</script>
