@@ -10,7 +10,7 @@ if ($_SESSION['user'] == "admin") {
 include('db.php');
 if (isset($_POST['upcamp'])) {
     $key = $_POST['key'];
-    $username = $_POST['uername'];
+    $username = $_POST['userid'];
     $name = $_POST['name'];
     $address = $_POST['address'];
     $pin = $_POST['pin'];
