@@ -34,7 +34,7 @@
     <h1 class="card__title"><label id="total"></h1>
             <img class="cimage" src="../files/blood-bank.png" />
           </div>          <h3 class="card__apply">
-          Total blood
+          Total no. of blood
       </h3>
     </div>     
 <div class="card card-1">
@@ -129,7 +129,10 @@
           document.getElementById("anve").textContent = snap.val().anve;
           document.getElementById("bpve").textContent = snap.val().bpve;
           document.getElementById("bnve").textContent = snap.val().bnve;
-          document.getElementById("total").textContent = ??;
+          document.getElementById("total").textContent = parseFloat(snap.val().opve)+parseFloat(snap.val().onve)
+                                                        +parseFloat(snap.val().apve)+parseFloat(snap.val().anve)
+                                                        +parseFloat(snap.val().bpve)+parseFloat(snap.val().bnve)
+                                                        +parseFloat(snap.val().abpve)+parseFloat(snap.val().abnve);
           document.getElementById("abpve").textContent = snap.val().abpve;
           document.getElementById("abnve").textContent = snap.val().abnve;
         });
