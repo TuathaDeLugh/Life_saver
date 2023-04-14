@@ -71,11 +71,11 @@
     padding: 20px;
     min-height: 150px;
     display: grid;
-    width:450px;
+    min-width:450px;
     grid-template-rows: 10px 07px 1fr 50px;
     border-radius: 10px;
     transition: all 0.2s;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     overflow:hidden;
 }
 
