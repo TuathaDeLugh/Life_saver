@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>    
-
 <link rel="icon" href="../files/logo.png" type="image/x-icon"/>
-<link href="../style/Admin/faq.css" rel="stylesheet" type="text/css" />
+
+    
+</head><style>
+.org {
+            font-weight: 700;
+            color: #F3525A;
+        }
+    </style>
+    <link href="../style/Admin/faq.css" rel="stylesheet" type="text/css" />
+    <link href="../style/common/model.css" rel="stylesheet" type="text/css" />
     <link href="../style/Bloodbank/addcampaign.css" rel="stylesheet" />
- 
+    <script defer src="../js/model.js"></script>
+    <link href="../js/toast.css" rel="stylesheet" />
+    <script src="../js/toast.js"></script> 
+    <script>
+        NolertNotify.setConfig({position: ('bottom-right'), closeIn: 5000});
+        </script>
 </head>
 <body>
-    <?php include('header.php');?>
-    <main id="main">
+    <?php include('header.php');
+            ?>
+        <main id="main">
         <div class="block">
+            <h2><center class="text-primary">Organ Request</center></h2>
         <?php
-include('../context/db.php');
+        include('../context/db.php');
 $i = 1;
-$getdata = $database->getReference("organ")->getValue();
-if ($getdata > 0) {
+    $getdata = $database->getReference("organ")->getValue();
+            if($getdata>0){
     ?>
 
 
@@ -24,13 +39,12 @@ if ($getdata > 0) {
         <thead>
             <tr>
                 <td>#</td>
-                <td>user</td>
+                <td>Name</td>
                 <td>address</td>
-                <td>Gender</td>
+                <td>pin</td>
                 <td>mono</td>
-                <td>Email</td>
-                <td>Birth Date</td>
-                <td>Blood Group</td>
+                <td>Death Date</td>
+                <td>Organ Name</td>
                 
             </tr>
         </thead>
@@ -41,31 +55,31 @@ if ($getdata > 0) {
             foreach ($refrance as $key => $row) { ?>
                 <tr>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['Full_name']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo "nathi" //$row['address']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['Gender']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['Phone_no']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['EmailId']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['Birth_date']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['BloodGroup']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['organuserid']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['deathdate']; ?></td>
+                    <td id="<?php echo $i ?>"><?php echo $row['organname']; ?></td>
                 </tr>
-                    <?php
-                    $i++;
+                <?php
+                 $i++;
             }
             ?>
         </tbody>
     </table>
     <?php
-} else {
+} 
+else {
 
     ?>
-    <tr>
-        <td colspan="7">
-            <h3>No data avaliable</h3>
-        <td>
-    <tr>
-
-        <?php
+     <tr>
+         <td colspan="7">
+             <h3 class="text-center">No organ request avaliable</h3>
+         <td>
+     <tr>
+  
+       <?php
 } ?>
         </div>
     </main>

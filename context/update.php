@@ -58,7 +58,6 @@ if (isset($_GET['deluser'])) {
 }
 if (isset($_POST['appcamp'])) {
         $caid = $_POST['appcamp'];
-        $campid = $_POST['campid'];
         $name = $_POST['name'];
         $address = $_POST['address'];
         $pin = $_POST['pin'];
@@ -85,6 +84,8 @@ if (isset($_POST['appcamp'])) {
     $store = $database->getReference("campaign/approve/$caid")->set($data);
     $database->getReference("campaign/notapprove/$caid")->remove();
     setcookie("update", "Campaign approved", time() + 5, "/");
-    header("location:../admin/updaterem.php");
+    echo "<script>;
+        window.location.replace('../admin/updaterem.php');</script>";
+    // header("location:../admin/updaterem.php");
 }
 ?>

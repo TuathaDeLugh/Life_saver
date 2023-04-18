@@ -60,6 +60,7 @@
             ?>
         <main id="main">
         <div class="block">
+        <h2><center class="text-primary">Campaign</center></h2>
         <?php
         include('../context/db.php');
 $i = 1;

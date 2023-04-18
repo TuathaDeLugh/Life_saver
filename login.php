@@ -69,7 +69,7 @@
 						<span class="slider round"></span>
 					</label>
 					Remember me
-					<a href="./accountrecovar.php" CausesValidation="False">Forgot Password</a>
+					<a href="#">Forgot Password</a>
 				</div>
 
 				<input type="submit" ID="Button1" name="login" value="Login" />

@@ -26,11 +26,15 @@
     <link href="../js/toast.css" rel="stylesheet" />
     <script src="../js/toast.js"></script> 
     <script>
-        NolertNotify.setConfig({position: ('bottom-right'), closeIn: 5000});
+        NolertNotify.setConfig({position: ('bottom-right'), closeIn: 15000});
         </script>
 </head>
 <body>
     <?php include('header.php');
+        if (str_contains($_SERVER['HTTP_REFERER'], 'update.php')) {
+            echo"<script> window.open(
+                'https://console.firebase.google.com/u/0/project/finalproject1-c0216/notification/compose', '_blank');</script>";
+        }
     	if (isset($_COOKIE['update'])) {
             ?>
             <script>NolertNotify.trigger({type: 'info',iconType: 'success',message: '<?php echo$_COOKIE['update']?>'});</script>
