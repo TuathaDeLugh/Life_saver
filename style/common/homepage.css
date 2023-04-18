@@ -71,7 +71,8 @@
     padding: 20px;
     min-height: 150px;
     display: grid;
-    min-width:450px;
+    min-width: 250px;
+    max-width:450px;
     grid-template-rows: 10px 07px 1fr 50px;
     border-radius: 10px;
     transition: all 0.2s;
@@ -99,7 +100,7 @@
 }
 @media (max-width: 680px) {
      .card{
-        width: auto;
+        width: 400px;
         height: auto;
     }
     .card__apply {
