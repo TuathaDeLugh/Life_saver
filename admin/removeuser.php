@@ -26,6 +26,7 @@
     ?>
     <main id="main">
         <div class="block">
+        <h2 class="text-primary text-center">Remove Users</h2>
         <?php
 include('../context/db.php');
 $i = 1;

@@ -22,6 +22,7 @@
     <?php include('header.php'); ?>
     <main id="main">
         <div class="block">
+        <h2 class="text-primary text-center">Blood Data</h2>
             <?php
             include('../context/db.php');
             $i = 1;

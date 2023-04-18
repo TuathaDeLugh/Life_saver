@@ -149,6 +149,7 @@
     <div id="overlay"></div>
     <main id="main">
         <div class="block">
+        <h2 class="text-primary text-center">Campaign</h2>
             <button data-modal-target="#newcamp" class="btn btn-primary">Create Campaign</button>
             <?php include('../context/adaca.php');?>
         </div>

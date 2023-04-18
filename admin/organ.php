@@ -25,7 +25,7 @@
             ?>
         <main id="main">
         <div class="block">
-            <h2><center class="text-primary">Organ Request</center></h2>
+            <h2 class="text-primary text-center">Organ Request</h2>
         <?php
         include('../context/db.php');
 $i = 1;
