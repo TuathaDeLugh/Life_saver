@@ -22,6 +22,11 @@
 </head>
 <body>
     <?php include('header.php');
+            if (isset($_COOKIE['delete'])) {
+                ?>
+                <script>NolertNotify.trigger({type: 'danger',iconType: 'success',message: '<?php echo$_COOKIE['delete']?>'});</script>
+                <?php
+            }
             ?>
         <main id="main">
         <div class="block">
@@ -45,6 +50,7 @@ $i = 1;
                 <td>mono</td>
                 <td>Death Date</td>
                 <td>Organ Name</td>
+                <td>Delete</td>
                 
             </tr>
         </thead>
@@ -61,7 +67,23 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php if(!isset($row['mobileno'])){echo"not given";}else{echo$row['mobileno'];} ?></td>
                     <td id="<?php echo $i ?>"><?php if(!isset($row['deathday'])){echo"not given";}else{echo$row['deathday'];} ?></td>
                     <td id="<?php echo $i ?>"><?php if(!isset($row['organname'])){echo"not given";}else{echo$row['organname'];} ?></td>
+                    <td><button data-modal-target="#dlorg<?php echo $i; ?>" class="btn btn-primary" >Delete</button></td>
                 </tr>
+                <div class="modal" id="dlorg<?php echo $i;?>">
+                    <div class="modal-header">
+                        <div class="title">
+                            <h2><h2>
+                        </div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <center><h2>Do You Really Want to Delete This Organ Request?</h2><br>
+                        <h5><?php echo$key;?></h5>
+                        <a href="../context/update.php?delorg=<?php echo$key?>" class="btn btn-primary">delete</a>
+                        <center>
+                    </div>
+                </div>
+                <div id="overlay"></div>
                 <?php
                  $i++;
             }

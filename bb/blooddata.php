@@ -12,7 +12,13 @@
 </head>
 
 <body>
-    <?php include('header.php');?>
+    <?php include('header.php');
+    if (isset($_COOKIE['update'])) {
+        ?>
+        <script>NolertNotify.trigger({type: 'info',iconType: 'success',message: '<?php echo$_COOKIE['update']?>'});</script>
+        <?php
+	}
+    ?>
     <main id="main">
     <center>    
     <div class="block">

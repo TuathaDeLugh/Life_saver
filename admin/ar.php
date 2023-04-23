@@ -15,11 +15,6 @@
         <h2 class="text-primary text-center">Android application Rateing</h2>
         <?php   
             include('../context/db.php');
-            if(isset($_GET['all']))
-            {
-            $database->getReference('App Rating/rating')->remove();
-            echo"<script>window.location.href ='faq.php';</script>";
-            }
             if(isset($_GET['delete']))
             {
                 $id=$_GET['delete'];
@@ -34,8 +29,6 @@
                     <th>username</th>
                     <th>Rating</th>
                     <th width="50%" >Feedback</th>
-                    
-                    <th><a href="ar.php?all=yes"><button class="button del">delete all</button></a></th>
                 </thead> 
                 <tbody>
         
@@ -47,7 +40,7 @@
                     <td style="width:9%;"><?php echo $key;?></td>
                     <td style="width:9%;"><?php echo $row['rating'];?></td>
                     <td style="width:7%;"><?php echo $row['Feedback'];?></td>
-                    <td style="width:5%;"><a href="ar.php?delete=<?php echo$key?>"><button class="button del">delete</button></a></td>
+                    <td style="width:5%;"><a href="ar.php?delete=<?php echo$key?>"><button class="button del">X</button></a></td>
                     </tr>
                     <?php
                  }

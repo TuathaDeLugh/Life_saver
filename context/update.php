@@ -42,6 +42,12 @@ if (isset($_GET['delcamp'])) {
     setcookie("delete", "Your $name campaign Deleted", time() + 5, "/");
     header("location:../$user/campaign.php");
 }
+if (isset($_GET['delorg'])) {
+    $id = $_GET['delorg'];
+    $database->getReference("organ/userid/$id")->remove();
+    setcookie("delete", "Your $id campaign Deleted", time() + 5, "/");
+    header("location:../$user/organ.php");
+}
 if (isset($_GET['delbb'])) {
     $bid = $_GET['delbb'];
     $database->getReference("weblogin/bloodbank/$bid")->remove();
