@@ -61,7 +61,13 @@
                     </div>
                 </div>
                 <!-- <a ID="HyperLink4" href="../admin/tip.php" class="nav-item nav-link"><u class="tod">Tip of The Day </u></a> -->
-                <a href="../admin/faq.php" class="nav-item nav-link"><u class="faq">F & Q</u></a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="faq ar nav-link dropdown-toggle " data-bs-toggle="dropdown">Feedback</a>
+                    <div class="dropdown-menu m-0">
+                <a href="../admin/faq.php" class="dropdown-item"><u class="faq">Contact us</u></a>
+                <a href="../admin/ar.php" class="dropdown-item"><u class="ar">App rateing</u></a>
+                </div>
+                </div>
 
 
                 <div class="nav-item dropdown">

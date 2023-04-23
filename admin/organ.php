@@ -29,7 +29,7 @@
         <?php
         include('../context/db.php');
 $i = 1;
-    $getdata = $database->getReference("organ")->getValue();
+    $getdata = $database->getReference("organ/userid")->getValue();
             if($getdata>0){
     ?>
 
@@ -51,16 +51,16 @@ $i = 1;
         <tbody>
 
             <?php
-            $refrance = $database->getReference("organ")->getValue();
+            $refrance = $database->getReference("organ/userid")->getValue();
             foreach ($refrance as $key => $row) { ?>
                 <tr>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['organuserid']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['deathdate']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo $row['organname']; ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['organuserid'])){echo"not given";}else{echo$row['organuserid'];} ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['address'])){echo"not given";}else{echo$row['address'];} ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['pincode'])){echo"not given";}else{echo$row['pincode'];} ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['mobileno'])){echo"not given";}else{echo$row['mobileno'];} ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['deathday'])){echo"not given";}else{echo$row['deathday'];} ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['organname'])){echo"not given";}else{echo$row['organname'];} ?></td>
                 </tr>
                 <?php
                  $i++;

@@ -51,34 +51,13 @@ if ($getdata > 0) {
             </tr>
         </thead>
         <tbody>
-        <?php
-            if (isset($_GET['map'])) {
-                $map = $_GET['map'];
-                if (str_contains($map, "https://goo")) {
-                    ?>
-                    <script>window.open('<?php echo $map; ?>', '_blank');</script>
-                    <?php
-
-                } elseif (str_contains($map, ",")) {
-                    ?>
-                    <script>window.open('https://www.google.com/maps/place/<?php echo $map; ?>', '_blank');</script>
-
-                    <?php
-                } else {
-                    ?>
-                    <script>NolertNotify.trigger({ type: 'danger', iconType: 'info', message: 'Given Maplink Is Invalid' })</script>
-                    <?php
-                }
-            }
-            ?>
-
             <?php
             $refrance = $database->getReference("Users")->getValue();
             foreach ($refrance as $key => $row) { ?>
                 <tr>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['Full_name']; ?></td>
-                    <td id="<?php echo $i ?>"><?php echo "nathi" //$row['address']; ?></td>
+                    <td id="<?php echo $i ?>"><?php if(!isset($row['address'])){echo"not given";}else{echo$row['address'];} ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['Gender']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['Phone_no']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['EmailId']; ?></td>
