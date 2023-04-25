@@ -9,12 +9,16 @@
             if(isset($_GET['all']))
             {
             $database->getReference('feedback')->remove();
-            echo"<script>window.location.href ='faq.php';</script>";
+            setcookie("delete", "Whole feedback data cleared", time() + 5, "/");
+            header('location:faq.php');
+            // echo"<script>window.location.href ='faq.php';</script>";
             }
             if(isset($_GET['delete']))
             {
                 $id=$_GET['delete'];
             $database->getReference('feedback/'."$id")->remove();
+            setcookie("delete", "Selected feedback deleted", time() + 5, "/");
+            echo"<script>window.location.href ='faq.php';</script>";
             }
             $i=1;
             $getdata = ($database->getReference("feedback")->getSnapshot())->getValue();
