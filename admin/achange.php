@@ -5,20 +5,10 @@
 
     
 </head><style>
-        .ac {
+.acc {
             font-weight: 700;
             color: #F3525A;
         }
-        .inputBox 
-{   
-	position: relative;
-	width: 325px;
-	margin-top: 0.3rem;
-	margin-bottom: 10px;
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-}
     </style>
     <link href="../style/Admin/faq.css" rel="stylesheet" type="text/css" />
     <link href="../style/common/model.css" rel="stylesheet" type="text/css" />
@@ -32,36 +22,16 @@
 </head>
 <body>
     <?php include('header.php');
-
-    	if (isset($_COOKIE['update'])) {
-            ?>
-            <script>NolertNotify.trigger({type: 'info',iconType: 'success',message: '<?php echo$_COOKIE['update']?>'});</script>
-            <?php
-        }?>
-                    <?php
-            if (isset($_GET['map'])) {
-                $map = $_GET['map'];
-                if (str_contains($map, "https://goo")) {
-                    ?>
-                    <script>window.open('<?php echo $map; ?>', '_blank');</script>
-                    <?php
-
-                } elseif (str_contains($map, ",")) {
-                    ?>
-                    <script>window.open('https://www.google.com/maps/place/<?php echo $map; ?>', '_blank');</script>
-
-                    <?php
-                } else {
-                    ?>
-                    <script>NolertNotify.trigger({ type: 'danger', iconType: 'info', message: 'Given Maplink Is Invalid' })</script>
-                    <?php
-                }
+            if (isset($_COOKIE['delete'])) {
+                ?>
+                <script>NolertNotify.trigger({type: 'danger',iconType: 'success',message: '<?php echo$_COOKIE['delete']?>'});</script>
+                <?php
             }
             ?>
         <main id="main">
         <div class="block">
-        <h2><center class="text-primary">Campaign</center></h2>
-        <?php
+            <h2 class="text-primary text-center">Running Campaign</h2>
+            <?php
         include('../context/db.php');
 $i = 1;
     $getdata = $database->getReference("campaign/approve")->getValue();
@@ -83,6 +53,7 @@ $i = 1;
                 <td>Image</td>
                 <td>date</td>
                 <td>time</td>
+                <td>Delete</td>
             </tr>
         </thead>
         <tbody>
@@ -102,6 +73,7 @@ $i = 1;
                                 class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
+                    <td><button data-modal-target="#dlcamp<?php echo $i; ?>" class="btn btn-primary">Delete</button></td>
                 </tr>
                 <div class="modal" id="image<?php echo $i ?>">
                     <div class="modal-header">
@@ -117,6 +89,25 @@ $i = 1;
                     </div>
                 </div>
                 <div id="overlay"></div>
+                <div class="modal" id="dlcamp<?php echo $i; ?>">
+                    <div class="modal-header">
+                        <div class="title">
+                            <h2>
+                                <h2>
+                        </div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <h1>Do You Really Want to Delete This campaign?</h1>
+                            <P><?php echo $row['name']; ?></P>
+                            <h3>This campaign is running</h3>
+                            <br>
+                            <a href="../context/update.php?delacamp=<?php echo $key ?>" class="btn btn-primary">delete</a>
+                            <center>
+                    </div>
+                    <div id="overlay"></div>
+                </div>
                 <?php
                  $i++;
             }

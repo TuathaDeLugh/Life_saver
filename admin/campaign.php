@@ -49,7 +49,11 @@
         <script>NolertNotify.trigger({type: 'danger',iconType: 'success',message: '<?php echo$_COOKIE['delete']?>'});</script>
         <?php
 	}
-    ?>
+    if (str_contains($_SERVER['HTTP_REFERER'], 'update.php')) {
+        echo"<script> window.open(
+            'https://console.firebase.google.com/u/0/project/finalproject1-c0216/notification/compose', '_blank');</script>";
+    }
+    ?> 
     <div class="modal" id="newcamp">
         <div class="modal-header">
             <div class="title">

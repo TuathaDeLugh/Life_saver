@@ -22,6 +22,7 @@ if ($getdata > 0) {
                 <td>time</td>
                 <td>update</td>
                 <td>delete</td>
+                <td>Approve</td>
             </tr>
         </thead>
         <tbody>
@@ -62,9 +63,25 @@ if ($getdata > 0) {
                                 class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>
-                    <td><button data-modal-target="#upcamp<?php echo $i; ?>" class="btn btn-outline-primary">update</button>
+                    <td><button data-modal-target="#upcamp<?php echo $i; ?>" class="btn btn-info">update</button>
                     </td>
                     <td><button data-modal-target="#dlcamp<?php echo $i; ?>" class="btn btn-primary">Delete</button></td>
+                    <td id="<?php echo $i ?>">
+                    <form action="../context/update.php?" method="post">
+                    <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
+                    <input type="hidden" name="address" value="<?php echo $row['address']; ?>">      
+                    <input type="hidden" name="pin" value="<?php echo $row['pin']; ?>">  
+                    <input type="hidden" name="map" value="<?php echo $row['map']; ?>">  
+                    <input type="hidden" name="mono" value="<?php echo $row['mono']; ?>">  
+                    <input type="hidden" name="tag" value="<?php echo $row['tag']; ?>">  
+                    <input type="hidden" name="image" value="<?php echo $row['image']; ?>">  
+                    <input type="hidden" name="date" value="<?php echo $row['date']; ?>">  
+                    <input type="hidden" name="time" value="<?php echo $row['time']; ?>"> 
+                    <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>">
+                    <input type="hidden" name="appcamp" value="<?php echo$key?>">
+                    <input type="submit" name="approve" value="approve" class="btn btn-success">  
+                    </form>
+                    </td>
                 </tr>
                 <div class="modal" id="image<?php echo $i ?>">
                     <div class="modal-header">
@@ -154,7 +171,8 @@ if ($getdata > 0) {
                     </div>
                     <div class="modal-body">
                         <center>
-                            <h1>Do You Really Want to Delete This?</h1><br>
+                            <h1>Do You Really Want to Delete This?</h1>
+                            <p><?php echo $row['name'] ?></p><br>
                             <a href="../context/update.php?delcamp=<?php echo $key ?>" class="btn btn-primary">delete</a>
                             <center>
                     </div>

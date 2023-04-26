@@ -40,7 +40,7 @@
                 <a href="../admin/home.php" class="nav-item nav-link"><u class="ahome">Home</u></a>
 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle meu bdo org rmu ca ac"
+                    <a href="#" class="nav-link dropdown-toggle meu bdo org rmu ca ac acc"
                         data-bs-toggle="dropdown">Users</a>
                     <div class="dropdown-menu m-0">
                         <!-- <a  href="../admin/bloodapprove.php" class="dropdown-item"><u class="bdo">  Blood Donation</u></a> -->
@@ -48,7 +48,8 @@
                         <a href="../admin/removeuser.php" class="dropdown-item"><u class="rmu"> Remove users</u></a>
                         <div class="dropdown-divider"></div>
                         <a href="../admin/campaign.php" class="dropdown-item"><u class="ca"> Campaign</u></a>
-                        <a href="../admin/updaterem.php" class="dropdown-item"><u class="ac"> Approve Campaign</u></a>
+                        <a href="../admin/achange.php" class="dropdown-item"><u class="acc"> running Campaign</u></a>
+                        <!-- <a href="../admin/updaterem.php" class="dropdown-item"><u class="ac"> Approve Campaign</u></a> -->
 
                     </div>
                 </div>

@@ -85,7 +85,7 @@ textarea {
     resize: none;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
     border: none;
     outline: none;
    
@@ -95,7 +95,7 @@ input[type="submit"] {
     font-weight: 600;
     width: 100%;
     color:white;
-}
+} */
 
     input[type="submit"]:active {
         opacity: 0.8;
