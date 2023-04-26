@@ -98,7 +98,7 @@ $i = 1;
                     <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
-                    <td><button data-modal-target="#image<?php echo $i ?>" class=""><img src="<?php echo $row['image']; ?>"
+                    <td><button data-modal-target="#image<?php echo $i ?>" class="nb"><img src="<?php echo $row['image']; ?>"
                                 class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['date']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['time']; ?></td>

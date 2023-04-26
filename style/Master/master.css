@@ -166,6 +166,12 @@ main {
 #main{
     display:none;
 }
+.nb{
+    border: 1px;
+    border-radius: 10%;
+
+}
 .icon{
+    border-radius: 10%;
     height: 40px;
 }
