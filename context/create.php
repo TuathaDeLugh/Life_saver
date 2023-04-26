@@ -48,6 +48,7 @@ if (isset($_POST['addbb']))
     $address = $_POST['address'];
     $pin = $_POST['pin'];
     $email = $_POST['email'];
+    $image = $_POST['image'];
     $password = $pass;
     $mono = $_POST['mono'];
     $question = $_POST['question'];
@@ -68,6 +69,7 @@ if (isset($_POST['addbb']))
         'name' => $name,
         'address' => $address,
         'pin' => $pin,
+        'img_blood' => $image,
         'password' => $password,
         'email' => $email,
         'mono' => $mono,

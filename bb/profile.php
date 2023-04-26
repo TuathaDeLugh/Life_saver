@@ -29,6 +29,12 @@
     </td>
 </tr>
 <tr>
+<td>Image</td>
+<td>
+    <input type="text" id="image" name="image"   disabled required>
+    </td>
+</tr>
+<tr>
 <td>Email</td>
 <td>
     <input type="text" id="email" name="email"   disabled required>

@@ -89,7 +89,12 @@
 <tr>
 <td>Password</td>
 <td>
-    <input type="text" id="password" name="password"    required>
+    <input type="password" id="password" name="password"    required>
+</td>
+</tr>
+<td>Image</td>
+<td>
+    <input type="text" id="image" name="image"    required>
 </td>
 </tr>
 <tr>

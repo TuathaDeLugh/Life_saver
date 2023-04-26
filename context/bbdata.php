@@ -12,6 +12,7 @@ $i = 1;
             <tr>
                 <td>#</td>
                 <td>Name</td>
+                <td>Image</td>
                 <td>address</td>
                 <td>pin</td>
                 <td>email</td>
@@ -28,6 +29,8 @@ $i = 1;
                 <tr>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
+                    <td><button data-modal-target="#image<?php echo $i ?>" class="nb"><img src="<?php if(!isset($row['img_blood'])){echo"not given";}else{echo$row['img_blood'];} ?>"
+                                class="icon"></button></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['email']; ?></td>
@@ -36,6 +39,20 @@ $i = 1;
                     <td><button data-modal-target="#dlcamp<?php echo $i; ?>" class="btn btn-primary" >Delete</button></td>
                     <!-- <td id="<?php echo $i ?>"><a href="../context/update.php?delcamp=<?php echo$key?>" class="btn btn-primary">delete</a></td> -->
                 </tr>
+                <div class="modal" id="image<?php echo $i ?>">
+                    <div class="modal-header">
+                        <div class="title">
+                            <h3>Image<h3>
+                        </div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <center>
+                            <img src="<?php if(!isset($row['img_blood'])){echo"not given";}else{echo$row['img_blood'];} ?>" alt="Image" width="300px">
+                            <center>
+                    </div>
+                    <div id="overlay"></div>
+                </div>
                 <div class="modal" id="dlcamp<?php echo $i;?>">
                     <div class="modal-header">
                         <div class="title">

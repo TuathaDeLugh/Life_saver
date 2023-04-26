@@ -30,7 +30,7 @@
             ?>
         <main id="main">
         <div class="block">
-            <h2 class="text-primary text-center">Running Campaign</h2>
+            <h2 class="text-primary text-center">Active Campaign</h2>
             <?php
         include('../context/db.php');
 $i = 1;

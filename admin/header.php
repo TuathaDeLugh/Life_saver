@@ -48,7 +48,7 @@
                         <a href="../admin/removeuser.php" class="dropdown-item"><u class="rmu"> Remove users</u></a>
                         <div class="dropdown-divider"></div>
                         <a href="../admin/campaign.php" class="dropdown-item"><u class="ca"> Campaign</u></a>
-                        <a href="../admin/achange.php" class="dropdown-item"><u class="acc"> running Campaign</u></a>
+                        <a href="../admin/achange.php" class="dropdown-item"><u class="acc"> Active Campaign</u></a>
                         <!-- <a href="../admin/updaterem.php" class="dropdown-item"><u class="ac"> Approve Campaign</u></a> -->
 
                     </div>

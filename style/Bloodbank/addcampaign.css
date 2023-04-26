@@ -97,12 +97,12 @@ textarea {
     color:white;
 } */
 
-    input[type="submit"]:active {
+    /* input[type="submit"]:active {
         opacity: 0.8;
     }
     input[type="submit"]:hover {
         background: #D10000;
-    }
+    } */
 @media (max-width: 680px) {
     .block1,.block,.d{
         margin:0;

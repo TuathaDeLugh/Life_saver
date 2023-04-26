@@ -41,7 +41,7 @@ if ($getdata > 0) {
             <tr>
                 <td>#</td>
                 <td>Name</td>
-                <td>address</td>
+                <!-- <td>address</td> -->
                 <td>Gender</td>
                 <td>mono</td>
                 <td>Email</td>
@@ -57,7 +57,7 @@ if ($getdata > 0) {
                 <tr>
                     <td id="<?php echo $i ?>"><?php echo $i; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['Full_name']; ?></td>
-                    <td id="<?php echo $i ?>"><?php if(!isset($row['address'])){echo"not given";}else{echo$row['address'];} ?></td>
+                    <!-- <td id="<?php echo $i ?>"><?php if(!isset($row['address'])){echo"not given";}else{echo$row['address'];} ?></td> -->
                     <td id="<?php echo $i ?>"><?php echo $row['Gender']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['Phone_no']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['EmailId']; ?></td>

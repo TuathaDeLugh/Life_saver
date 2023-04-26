@@ -38,7 +38,7 @@
     height: 50px;
     width: 100px;
 } */
-    input[type="submit"]:disabled {
+    /* input[type="submit"]:disabled {
         opacity: 0.4;
         cursor:no-drop;
     }
@@ -48,7 +48,7 @@
 
     input[type="submit"]:hover {
         background: #ff7d00;
-    }
+    } */
 .button{
     margin: 5px;
     padding: 05px;
