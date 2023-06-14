@@ -57,7 +57,26 @@ $i = 1;
             </tr>
         </thead>
         <tbody>
+        <?php
+            if (isset($_GET['map'])) {
+                $map = $_GET['map'];
+                if (str_contains($map, "https://goo")) {
+                    ?>
+                    <script>window.open('<?php echo $map; ?>', '_blank');</script>
+                    <?php
 
+                } elseif (str_contains($map, ",")) {
+                    ?>
+                    <script>window.open('https://www.google.com/maps/place/<?php echo $map; ?>', '_blank');</script>
+
+                    <?php
+                } else {
+                    ?>
+                    <script>NolertNotify.trigger({ type: 'danger', iconType: 'info', message: 'Given Maplink Is Invalid' })</script>
+                    <?php
+                }
+            }
+            ?>
             <?php
             $refrance = $database->getReference("campaign/approve")->getValue();
             foreach ($refrance as $key => $row) { ?>
@@ -66,7 +85,7 @@ $i = 1;
                     <td id="<?php echo $i ?>"><?php echo $row['name']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['address']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['pin']; ?></td>
-                    <td id="<?php echo $i ?>"><a href="campaign.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
+                    <td id="<?php echo $i ?>"><a href="achange.php?map=<?php echo $row['map']; ?>"><img src="../img/location.png" class="icon"></a></td>
                     <td id="<?php echo $i ?>"><?php echo $row['mono']; ?></td>
                     <td id="<?php echo $i ?>"><?php echo $row['tag']; ?></td>
                     <td><button data-modal-target="#image<?php echo $i ?>" class="nb"><img src="<?php echo $row['image']; ?>"
