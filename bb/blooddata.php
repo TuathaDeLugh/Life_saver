@@ -81,7 +81,7 @@
                 </div>
  </tr>
      <tr>
-    <td colspan="2"><input type="submit" id="" name="save" Class="btn" value="Save" /></td>
+    <td colspan="2"><input type="submit" id="" name="save" Class="btn btn-primary" value="Save" /></td>
 </tr>
  </table>
 </form>
